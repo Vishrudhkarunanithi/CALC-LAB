@@ -1,5 +1,6 @@
 
-// Vishrudh Pattukkottai Karunanithi
+// Name: Vishrudh Pattukkottai Karunanithi
+// Student ID : 251ADB035
 // https://github.com/Vishrudhkarunanithi/CALC-LAB
 // Compile with: gcc -O2 -Wall -Wextra -std=c17 -o calc calc.c -lm
 // Resources used: <every AI tool, website and book you used; details in comments where you used them>
@@ -163,7 +164,7 @@ static Value parse_power(Parser *p)
             left.is_integer = left.is_integer && right.is_integer;
 
             if (!isfinite(left.value))
-                set_error(p, op_pos);
+                 set_error(p, op_pos);
         }
     }
 
@@ -255,7 +256,7 @@ static Value parse_expression(Parser *p)
         }
     }
 
-    return left;
+     return left;
 }
 
 
@@ -268,7 +269,7 @@ static int calculate_file(const char *input, const char *output)
         return -1;
     }
 
-    FILE *out = fopen(output, "w");
+    FILE *out =fopen(output, "w");
 
     if (!out) {
         fprintf(stderr, "Cannot create output file: %s\n", output);
@@ -381,11 +382,9 @@ static int ensure_directory(const char *path)
     return -1;
 }
 
-static int make_output_path(char *buffer, size_t size,
-                            const char *directory, const char *base)
+static int make_output_path(char *buffer, size_t size,const char *directory, const char *base)
 {
-    int n = snprintf(buffer, size, "%s/%s_%s_%s_%s.txt",
-                     directory, base,
+    int n = snprintf(buffer, size, "%s/%s_%s_%s_%s.txt",directory, base,
                      STUDENT_NAME, STUDENT_LASTNAME, STUDENT_ID);
 
     if (n < 0 || (size_t)n >= size) {
